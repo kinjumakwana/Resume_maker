@@ -574,9 +574,8 @@
                 <div class="col-7"> 
                   <!-- edit_reference   -->
                   <!-- <form method="post" class="update_ref" action=" {% url 'add_reference' %}"> -->
-                    <form method="post" class="update_ref" action="{% if edit_reference %}{% url 'reference_update' pk=update_ref.id %}{% else %}{% url 'add_reference' %}{% endif %}">  
+                    <form method="post" class="update_ref" action="{% if edit_reference %}{% url 'reference_update' pk=edit_reference.id %}{% else %}{% url 'add_reference' %}{% endif %}">  
                       {% csrf_token %}
-                      {% for ref in reference %}
                       <div class="row mb-3">
                         <div class="col-6">
                           <div class="form-floating mb-3">
@@ -618,7 +617,6 @@
                         <input type="submit" class="btn btn-primary" value="{% if edit_reference %} Edit {% else %} Add Reference {% endif %}">
                       </div>
 
-                    {% endfor %}
                     </form>
                 </div>
               

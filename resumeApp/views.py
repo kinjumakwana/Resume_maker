@@ -510,7 +510,8 @@ def reference_update(request, pk):
         reference.ClientContNo = request.POST['compcont']
         reference.Link = request.POST['link']
         reference.Description = request.POST['description']
-
+        reference.save()
+        return redirect(profile_page)
     else:
             data['edit_reference'] = reference
             return redirect(profile_page)
